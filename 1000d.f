@@ -79,7 +79,7 @@ c
          time(5) = 2.0d0/time(4)
          time(6) = total/cray
          write(6,80) lda
-   80    format(' times for array with leading dimension of',i4)
+   80    format(' times for array with leading dimension of ',i4)
          write(6,110) (time(i),i=1,6)
   110    format(6(1pe11.3))
          write(6,*)' end of tests -- this version dated 10/12/92'
