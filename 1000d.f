@@ -2,6 +2,7 @@
       double precision time(6),cray,ops,total,norma,normx
       double precision resid,residn,eps,epslon
       integer ipvt(1000)
+      double precision :: t1, t2
       lda = 1001
 c
 c     this program was updated on 10/12/92 to correct a
@@ -30,12 +31,15 @@ c        by calls to your linear equation solver.
 c******************************************************************
 c******************************************************************
 c
-         t1 = second()
+         ! Only care about seconds
+         call cpu_time(t1)
          call dgefa(a,lda,n,ipvt,info)
-         time(1) = second() - t1
-         t1 = second()
+         call cpu_time(t2)
+         time(1) = t2 - t1
+         call cpu_time(t1)
          call dgesl(a,lda,n,ipvt,b,0)
-         time(2) = second() - t1
+         call cpu_time(t2)
+         time(2) = t2 - t1
          total = time(1) + time(2)
 c******************************************************************
 c******************************************************************
@@ -85,6 +89,7 @@ c
       subroutine matgen(a,lda,n,b,norma)
       integer lda,n,init(4),i,j
       double precision a(lda,1),b(1),norma,ran
+      external ran
 c
       init(1) = 1
       init(2) = 2
@@ -753,3 +758,4 @@ c
 *     End of RAN
 *
       END
+
