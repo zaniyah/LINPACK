@@ -12,14 +12,14 @@ c     singular matrices occasionally.
 c
       n = 1000
       cray = .056
-      write(6,1)
-    1 format(' Please send the results of this run to:'//
-     $       ' Jack J. Dongarra'/
-     $       ' Computer Science Department'/
-     $       ' University of Tennessee'/
-     $       ' Knoxville, Tennessee 37996-1300'//
-     $       ' Fax: 615-974-8296'//
-     $       ' Internet: dongarra@cs.utk.edu'/)
+c     write(6,1)
+c   1 format(' Please send the results of this run to:'//
+c    $       ' Jack J. Dongarra'/
+c    $       ' Computer Science Department'/
+c    $       ' University of Tennessee'/
+c    $       ' Knoxville, Tennessee 37996-1300'//
+c    $       ' Fax: 615-974-8296'//
+c    $       ' Internet: dongarra@cs.utk.edu'/)
       ops = (2.0d0*dfloat(n)**3)/3.0d0 + 2.0d0*dfloat(n)**2
 c
          call matgen(a,lda,n,b,norma)
