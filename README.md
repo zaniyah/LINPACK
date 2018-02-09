@@ -25,3 +25,7 @@ $ ./linpack-benchmark
   1.028E+00  0.000E+00  1.028E+00  6.505E+02  3.075E-03  1.836E+01
   end of tests -- this version dated 10/12/92
 ```
+
+This benchmark is here mainly for historical interest.  For the benchmark used
+for top500 list submissions, you want the High Performance LINPACK (HPL)
+benchmark (and a suitable BLAS library): http://www.netlib.org/benchmark/hpl/
